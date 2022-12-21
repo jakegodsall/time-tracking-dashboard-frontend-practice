@@ -1,25 +1,17 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+import Profile from './components/Profile/Profile';
+import TrackerList from './components/Tracker/TrackerList';
+
+const DATA = require('./data.json');
+
+const App = () => {
+    return (
+        <React.Fragment>
+            <Profile></Profile>
+            <TrackerList data={DATA}></TrackerList>
+        </React.Fragment>
+    );
+};
 
 export default App;
