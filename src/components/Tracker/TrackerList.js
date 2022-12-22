@@ -13,7 +13,14 @@ const TrackerList = (props) => {
     return (
         <TrackerGrid>
             {props.data.map((topic, idx) => {
-                return <TrackerItem key={idx} data={topic}></TrackerItem>;
+                return (
+                    <TrackerItem
+                        styling={props.styling[topic.title.toLowerCase()]}
+                        key={idx}
+                        title={topic.title}
+                        timeframes={topic.timeframes[props.selector]}
+                    ></TrackerItem>
+                );
             })}
         </TrackerGrid>
     );
